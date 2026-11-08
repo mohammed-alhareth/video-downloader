@@ -1,5 +1,7 @@
 # Video Downloader
 
+**by DOSAN**
+
 > **Educational project.** I made this to practice Python, Tkinter and working with libraries like yt-dlp.
 > Please only download videos you own or have permission to download.
 
@@ -61,6 +63,15 @@ This project is for **educational purposes only**. Every time the app starts, th
 - The author is **not responsible** for any misuse of this tool or for any damage
   caused by it. You use it at your own risk and you are fully responsible for how you use it.
 
+## Author
+
+Developed by **DOSAN**.
+
+## License
+
+© 2026 DOSAN. Released under the [MIT License](LICENSE).
+You can use and share the code, but you must keep the copyright notice with the name DOSAN.
+
 ## Credits
 
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp): the download engine
@@ -91,5 +102,8 @@ This project is for **educational purposes only**. Every time the app starts, th
 - حمّل بس الفيديوهات اللي لك أو عندك إذن بتحميلها، واحترم حقوق النشر وشروط المواقع.
 - يُمنع استخدام الأداة لأي غرض غير قانوني أو غير أخلاقي، مثل القرصنة، أو إعادة نشر محتوى غيرك، أو تحميل محتوى خاص بدون إذن صاحبه.
 - صاحب المشروع **غير مسؤول** عن أي سوء استخدام للأداة أو أي ضرر ينتج عنها، والمستخدم يتحمل المسؤولية كاملة.
+
+
+**المطوّر:** DOSAN — جميع الحقوق محفوظة © 2026 DOSAN، وفق رخصة MIT.
 
 </div>

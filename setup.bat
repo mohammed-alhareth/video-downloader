@@ -1,6 +1,6 @@
 @echo off
 setlocal
-title Video Downloader - Setup
+title Video Downloader by DOSAN - Setup
 cd /d "%~dp0"
 
 rem %1 = full path of python.exe (sent by the app). Without it, use the py launcher.
@@ -13,7 +13,7 @@ if "%PY%"=="" (
 
 echo.
 echo ===============================================
-echo   Video Downloader - Setup
+echo   Video Downloader by DOSAN - Setup
 echo   Installing / updating: yt-dlp, ffmpeg, deno
 echo ===============================================
 echo.

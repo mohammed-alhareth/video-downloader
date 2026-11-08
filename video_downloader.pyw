@@ -2,6 +2,8 @@
 """
 Video Downloader
 ----------------
+Copyright (c) 2026 DOSAN
+
 small desktop app to download videos from a link (youtube, google drive, x,
 tiktok ...) using yt-dlp. videos go to Videos/Video Downloader
 
@@ -25,7 +27,9 @@ import tkinter as tk
 from pathlib import Path
 from tkinter import ttk
 
-APP_ID = "VideoDownloader.App"
+APP_ID = "DOSAN.VideoDownloader"
+AUTHOR = "DOSAN"
+COPYRIGHT = "© 2026 DOSAN"
 HERE = Path(__file__).resolve().parent
 SAVE_DIR = Path.home() / "Videos" / "Video Downloader"
 SETTINGS = Path(os.environ.get("APPDATA", Path.home())) / "VideoDownloader" / "settings.json"
@@ -125,7 +129,8 @@ TERMS = {
     "en": {
         "title": "Terms of Use",
         "heading": "Please read these terms before using Video Downloader",
-        "body": """By using Video Downloader ("the Software"), you agree to the following terms:
+        "body": """Video Downloader ("the Software") is developed and owned by DOSAN ("the author").
+By using the Software, you agree to the following terms:
 
 1. Educational purpose
 The Software is provided for educational and personal purposes only.
@@ -161,7 +166,8 @@ If you do not agree to these terms, do not use the Software. Pressing "I Agree" 
     "ar": {
         "title": "شروط الاستخدام",
         "heading": "يرجى قراءة الشروط التالية قبل استخدام البرنامج",
-        "body": """باستخدامك لبرنامج Video Downloader (ويُشار إليه بـ "البرنامج")، فإنك توافق على الشروط التالية:
+        "body": """برنامج Video Downloader (ويُشار إليه بـ "البرنامج") من تطوير DOSAN وملكيته (ويُشار إليه بـ "صاحب البرنامج").
+باستخدامك للبرنامج، فإنك توافق على الشروط التالية:
 
 ١. الغرض التعليمي
 البرنامج مقدَّم لأغراض تعليمية وشخصية فقط.
@@ -212,7 +218,7 @@ def ask_terms(root, lang):
         tx = TERMS[L]
         rtl = L == "ar"
         near, far = ("right", "left") if rtl else ("left", "right")
-        win.title(tx["title"])
+        win.title(f'{tx["title"]} - {AUTHOR}')
 
         top = tk.Frame(win)
         top.pack(fill="x", padx=16, pady=(14, 6))
@@ -244,6 +250,7 @@ def ask_terms(root, lang):
         agree_btn.pack(side=near)
         tk.Button(btns, text=tx["decline"], font=("Segoe UI", 11), width=12,
                   command=win.destroy).pack(side=near, padx=8)
+        tk.Label(btns, text=COPYRIGHT, font=("Segoe UI", 9, "bold"), fg="gray").pack(side=far)
 
     def switch():
         state["lang"] = "en" if state["lang"] == "ar" else "ar"
@@ -456,7 +463,7 @@ class App:
         self.root = root
         self.lang = load_lang()
         self.busy = False
-        root.title("Video Downloader")
+        root.title(f"Video Downloader - {AUTHOR}")
         root.geometry("660x430")
         root.resizable(False, False)
         self.set_icon()
@@ -541,7 +548,10 @@ class App:
         self.box.tag_configure("err", justify="left", foreground="#a00")
         self.box.pack(fill="both", padx=16, pady=(0, 6))
 
-        tk.Label(root, text=str(SAVE_DIR), font=("Segoe UI", 9), fg="gray", anchor=anchor).pack(fill="x", padx=16)
+        foot = tk.Frame(root)
+        foot.pack(fill="x", padx=16)
+        tk.Label(foot, text=str(SAVE_DIR), font=("Segoe UI", 9), fg="gray").pack(side=near)
+        tk.Label(foot, text=COPYRIGHT, font=("Segoe UI", 9, "bold"), fg="gray").pack(side=far)
 
     # tkinter is not thread safe so use after()
     def _ui(self, fn):

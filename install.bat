@@ -2,7 +2,7 @@
 setlocal
 cd /d "%~dp0"
 echo.
-echo ==== Video Downloader - install ====
+echo ==== Video Downloader by DOSAN - install ====
 echo.
 
 where py >nul 2>nul
@@ -31,7 +31,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command ^
   "$s.Arguments='\"%~dp0video_downloader.pyw\"';" ^
   "$s.WorkingDirectory='%~dp0';" ^
   "$s.IconLocation='%~dp0icon.ico';" ^
-  "$s.Description='Video Downloader';" ^
+  "$s.Description='Video Downloader by DOSAN';" ^
   "$s.Save()"
 
 echo   Shortcut created on your desktop.

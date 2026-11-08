@@ -1,10 +1,13 @@
 # Terms of Use / شروط الاستخدام
 
+**Video Downloader by DOSAN** · © 2026 DOSAN
+
 These terms are shown every time the app starts. The app only works after the user ticks the box and presses **I Agree**.
 
 ## English
 
-By using Video Downloader ("the Software"), you agree to the following terms:
+Video Downloader ("the Software") is developed and owned by DOSAN ("the author").  
+By using the Software, you agree to the following terms:
 
 ### 1. Educational purpose
 
@@ -50,7 +53,8 @@ If you do not agree to these terms, do not use the Software. Pressing "I Agree" 
 
 تظهر هذه الشروط في كل مرة يتم فيها تشغيل البرنامج، ولا يعمل البرنامج إلا بعد أن يضع المستخدم علامة على مربع الموافقة ويضغط **أوافق**.
 
-باستخدامك لبرنامج Video Downloader (ويُشار إليه بـ "البرنامج")، فإنك توافق على الشروط التالية:
+برنامج Video Downloader (ويُشار إليه بـ "البرنامج") من تطوير DOSAN وملكيته (ويُشار إليه بـ "صاحب البرنامج").  
+باستخدامك للبرنامج، فإنك توافق على الشروط التالية:
 
 ### ١. الغرض التعليمي
 
