@@ -10,6 +10,7 @@ only download videos that you own or have permission to download
 the author is not responsible for any misuse of this tool
 
 first time: run install.bat
+the terms of use window shows every time the app starts (see TERMS.md)
 """
 
 import json
@@ -117,6 +118,151 @@ def save_lang(lang):
         SETTINGS.write_text(json.dumps({"lang": lang}), encoding="utf-8")
     except OSError:
         pass
+
+
+# ===== terms of use =====
+TERMS = {
+    "en": {
+        "title": "Terms of Use",
+        "heading": "Please read these terms before using Video Downloader",
+        "body": """By using Video Downloader ("the Software"), you agree to the following terms:
+
+1. Educational purpose
+The Software is provided for educational and personal purposes only.
+
+2. Your responsibility
+You are solely and fully responsible for how you use the Software and for any content you download with it. You may only download content that you own, or that you have clear permission from the owner to download.
+
+3. Prohibited use
+You must not use the Software for any illegal or unethical purpose, including but not limited to: copyright infringement, piracy, re-uploading or selling other people's content, downloading private or restricted content without the owner's consent, bypassing access controls, or harming any person or organization.
+
+4. Laws and website terms
+You must follow the laws of your country and the terms of service of every website you download from.
+
+5. No warranty
+The Software is provided "as is", without warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, and non-infringement.
+
+6. Limitation of liability
+In no event shall the author or contributors be liable for any claim, damages, losses, legal action or other liability, whether in contract, tort or otherwise, arising from, out of, or in connection with the Software or its use or misuse.
+
+7. Indemnification
+You agree to defend, indemnify and hold harmless the author and contributors from and against any claims, damages, losses, fines, and legal costs (including lawyer fees) arising from your use of the Software or your violation of these terms or of any law or third-party right.
+
+8. Third-party tools
+The Software uses third-party tools (yt-dlp, FFmpeg, Deno), each under its own license. The author is not affiliated with these tools or with any website.
+
+9. Acceptance
+If you do not agree to these terms, do not use the Software. Pressing "I Agree" means you have read, understood and accepted all of the terms above.""",
+        "check": "I have read and agree to the Terms of Use",
+        "agree": "I Agree",
+        "decline": "Decline",
+        "other_lang": "العربية",
+    },
+    "ar": {
+        "title": "شروط الاستخدام",
+        "heading": "يرجى قراءة الشروط التالية قبل استخدام البرنامج",
+        "body": """باستخدامك لبرنامج Video Downloader (ويُشار إليه بـ "البرنامج")، فإنك توافق على الشروط التالية:
+
+١. الغرض التعليمي
+البرنامج مقدَّم لأغراض تعليمية وشخصية فقط.
+
+٢. مسؤولية المستخدم
+أنت وحدك المسؤول مسؤولية كاملة عن طريقة استخدامك للبرنامج، وعن أي محتوى تقوم بتحميله. ولا يجوز لك تحميل أي محتوى إلا إذا كان ملكاً لك، أو حصلت على إذن صريح من صاحبه.
+
+٣. الاستخدام الممنوع
+يُمنع استخدام البرنامج لأي غرض غير قانوني أو غير أخلاقي، ومن ذلك على سبيل المثال لا الحصر: انتهاك حقوق النشر، والقرصنة، وإعادة نشر محتوى الآخرين أو بيعه، وتحميل المحتوى الخاص أو المقيّد دون موافقة صاحبه، وتجاوز أنظمة الحماية، أو الإضرار بأي شخص أو جهة.
+
+٤. الأنظمة وشروط المواقع
+يجب عليك الالتزام بأنظمة وقوانين بلدك، وبشروط الاستخدام الخاصة بكل موقع تقوم بالتحميل منه.
+
+٥. عدم الضمان
+يُقدَّم البرنامج "كما هو" دون أي ضمان من أي نوع، صريحاً كان أو ضمنياً، بما في ذلك على سبيل المثال لا الحصر: ضمان صلاحيته للبيع، أو ملاءمته لغرض معين، أو عدم انتهاكه لحقوق الغير.
+
+٦. حدود المسؤولية
+لا يتحمّل صاحب البرنامج أو المساهمون فيه بأي حال من الأحوال أي مسؤولية عن أي مطالبة أو أضرار أو خسائر أو دعاوى قانونية أو أي التزام آخر، سواء كان تعاقدياً أو تقصيرياً أو غير ذلك، ينتج عن البرنامج أو عن استخدامه أو سوء استخدامه أو يتعلق به.
+
+٧. التعويض
+توافق على أن تدافع عن صاحب البرنامج والمساهمين فيه، وأن تعوّضهم وتُخلي مسؤوليتهم من أي مطالبات أو أضرار أو خسائر أو غرامات أو تكاليف قانونية (بما في ذلك أتعاب المحاماة) تنتج عن استخدامك للبرنامج، أو عن مخالفتك لهذه الشروط أو لأي نظام أو لأي حق من حقوق الغير.
+
+٨. أدوات الطرف الثالث
+يستخدم البرنامج أدوات خارجية (yt-dlp و FFmpeg و Deno)، ولكل أداة رخصتها الخاصة. وصاحب البرنامج ليس له أي علاقة بهذه الأدوات أو بأي موقع.
+
+٩. الموافقة
+إذا كنت لا توافق على هذه الشروط، فلا تستخدم البرنامج. والضغط على زر "أوافق" يعني أنك قرأت جميع الشروط أعلاه وفهمتها ووافقت عليها.""",
+        "check": "قرأت شروط الاستخدام وأوافق عليها",
+        "agree": "أوافق",
+        "decline": "لا أوافق",
+        "other_lang": "English",
+    },
+}
+
+
+def ask_terms(root, lang):
+    """shows the terms window. returns (accepted, lang)"""
+    state = {"ok": False, "lang": lang}
+    win = tk.Toplevel(root)
+    win.geometry("620x560")
+    win.resizable(False, False)
+    win.protocol("WM_DELETE_WINDOW", win.destroy)  # closing the window = decline
+
+    def draw():
+        for w in win.winfo_children():
+            w.destroy()
+        L = state["lang"]
+        tx = TERMS[L]
+        rtl = L == "ar"
+        near, far = ("right", "left") if rtl else ("left", "right")
+        win.title(tx["title"])
+
+        top = tk.Frame(win)
+        top.pack(fill="x", padx=16, pady=(14, 6))
+        tk.Label(top, text=tx["heading"], font=("Segoe UI", 11, "bold")).pack(side=near)
+        tk.Button(top, text=tx["other_lang"], font=("Segoe UI", 9), width=9,
+                  command=switch).pack(side=far)
+
+        frame = tk.Frame(win)
+        frame.pack(fill="both", expand=True, padx=16)
+        sb = tk.Scrollbar(frame)
+        sb.pack(side="left" if rtl else "right", fill="y")
+        box = tk.Text(frame, wrap="word", font=("Segoe UI", 10), yscrollcommand=sb.set,
+                      padx=8, pady=6)
+        box.tag_configure("dir", justify="right" if rtl else "left")
+        box.insert("1.0", tx["body"], "dir")
+        box.config(state="disabled")
+        box.pack(side="left", fill="both", expand=True)
+        sb.config(command=box.yview)
+
+        var = tk.BooleanVar(value=False)
+        tk.Checkbutton(win, text=tx["check"], variable=var, font=("Segoe UI", 10),
+                       command=lambda: agree_btn.config(state="normal" if var.get() else "disabled")
+                       ).pack(anchor="e" if rtl else "w", padx=16, pady=(8, 4))
+
+        btns = tk.Frame(win)
+        btns.pack(fill="x", padx=16, pady=(0, 14))
+        agree_btn = tk.Button(btns, text=tx["agree"], font=("Segoe UI", 11, "bold"), width=12,
+                              state="disabled", command=accept)
+        agree_btn.pack(side=near)
+        tk.Button(btns, text=tx["decline"], font=("Segoe UI", 11), width=12,
+                  command=win.destroy).pack(side=near, padx=8)
+
+    def switch():
+        state["lang"] = "en" if state["lang"] == "ar" else "ar"
+        draw()
+
+    def accept():
+        state["ok"] = True
+        win.destroy()
+
+    draw()
+    win.lift()
+    win.focus_force()
+    try:
+        win.wait_visibility()
+        win.grab_set()
+    except tk.TclError:
+        pass
+    root.wait_window(win)
+    return state["ok"], state["lang"]
 
 
 # ===== helpers =====
@@ -458,5 +604,20 @@ class App:
 if __name__ == "__main__":
     set_taskbar_identity()  # has to be before tk.Tk()
     root = tk.Tk()
+    root.withdraw()  # hide main window until terms are accepted
+    for f in ("icon.ico",):
+        if (HERE / f).exists():
+            try:
+                root.iconbitmap(default=str(HERE / f))
+            except tk.TclError:
+                pass
+
+    accepted, lang = ask_terms(root, load_lang())
+    if not accepted:
+        root.destroy()
+        sys.exit(0)
+
+    save_lang(lang)
+    root.deiconify()
     App(root)
     root.mainloop()

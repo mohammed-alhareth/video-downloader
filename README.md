@@ -19,6 +19,7 @@ including YouTube, Google Drive, X, TikTok, Instagram and Facebook.
 - Progress bar with speed and time left
 - Auto retry and resume when the connection drops
 - Clear error messages (unsupported site, private video, needs update)
+- Terms of Use window on every start: the app only works after the user agrees
 - One-click **Setup** button: opens a terminal window that installs or updates yt-dlp, ffmpeg and deno
 - Arabic and English interface (your choice is remembered)
 - Its own icon on the desktop, title bar and taskbar
@@ -51,7 +52,7 @@ If a site stops working, press the Setup button again to update yt-dlp.
 
 ## Disclaimer
 
-This project is for **educational purposes only**.
+This project is for **educational purposes only**. Every time the app starts, the user must accept the [Terms of Use](TERMS.md) before using it.
 
 - Only download videos you own or have permission to download.
 - Respect copyright law and each website's terms of service.
@@ -83,6 +84,8 @@ This project is for **educational purposes only**.
 وزر **تجهيز البرنامج** يفتح نافذة Terminal ويحدّث الأدوات في أي وقت.
 
 **إخلاء مسؤولية:**
+
+كل ما يشتغل البرنامج تطلع نافذة [شروط الاستخدام](TERMS.md)، وما يشتغل إلا إذا وافق المستخدم عليها.
 
 - هذا المشروع لغرض تعليمي فقط.
 - حمّل بس الفيديوهات اللي لك أو عندك إذن بتحميلها، واحترم حقوق النشر وشروط المواقع.
